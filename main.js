@@ -13,7 +13,7 @@ const whoamiObj = {
             "to": "2018"
         },
         "TUM": {
-            "type": "Bachelor Studies, Informatics",
+            "type": "B.Sc. Informatik",
             "location": "Munich",
             "from": "2018",
             "to": "2021 (expected)"
@@ -21,6 +21,8 @@ const whoamiObj = {
     }
 };
 const whoamiStr = JSON.stringify(whoamiObj, undefined, 2);
+
+//TODO add about Joscha cool command + github / projects command
 
 window.onload = function () {
     document.getElementById("terminal").append(myTerminal.html);
@@ -72,11 +74,9 @@ function getResponse(input) {
             window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
             return "";
         case "contact":
-            const mail = caesarShift("ij@kptdibt.qbhf", -1);
+            const mail = caesarShift("nbjm@nbyfjtofs.efw", -1);
             let ret = "Uhh, you want to get in touch? Awesome, I'm always up for a chat:<br><br>";
             ret += indent + "<a style='color:#fff;' href='mailto:" + mail + "'>" + mail + "</a> &lt-- click here<br>";
-            ret += indent + "or here! --> <a style='color:#fff;' href='https://twitter.com/joschahen'>twitter.com/joschahen</a><br>";
-            ret += indent + "<a style='color:#fff;' href='https://t.me/joschahenningsen'>t.me/joschahenningsen</a> <-- maybe even there<br><br>";
             return ret;
         default:
             return "<span class='error'>✘</span> command not found: " + input;
