@@ -1,6 +1,6 @@
-var myTerminal = new Terminal();
-var indent = "<span class='indent'></span>"
-var whoamiObj = {
+let myTerminal = new Terminal();
+const indent = "<span class='indent'></span>";
+const whoamiObj = {
     "name": "Max Eisner",
     "dateOfBirth": "11.04.2000",
     "placeOfBirth": "Lahnstein, Germany",
@@ -19,14 +19,14 @@ var whoamiObj = {
             "to": "2021 (expected)"
         }
     }
-}
-var whoamiStr = JSON.stringify(whoamiObj, undefined, 2)
+};
+const whoamiStr = JSON.stringify(whoamiObj, undefined, 2);
 
 window.onload = function () {
     document.getElementById("terminal").append(myTerminal.html);
     setup();
     readMessage();
-}
+};
 
 function setup() {
     myTerminal.print("Hi,");
@@ -43,7 +43,7 @@ function readMessage() {
 }
 
 function messageReceived(message) {
-    myTerminal.print(getResponse(message))
+    myTerminal.print(getResponse(message));
     // printlines(getResponse(message));
     readMessage();
 }
@@ -51,7 +51,7 @@ function messageReceived(message) {
 function getResponse(input) {
     switch (input) {
         case "help":
-            var res = "Available commands: <br>";
+            let res = "Available commands: <br>";
             res += indent + "help<br>";
             res += indent + "whoami<br>";
             res += indent + "contact<br>";
@@ -72,12 +72,12 @@ function getResponse(input) {
             window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
             return "";
         case "contact":
-            var mail = caesarShift("ij@kptdibt.qbhf", -1);
-            var ret = "Uhh, you want to get in touch? Awesome, I'm always up for a chat:<br><br>";
+            const mail = caesarShift("ij@kptdibt.qbhf", -1);
+            let ret = "Uhh, you want to get in touch? Awesome, I'm always up for a chat:<br><br>";
             ret += indent + "<a style='color:#fff;' href='mailto:" + mail + "'>" + mail + "</a> &lt-- click here<br>";
             ret += indent + "or here! --> <a style='color:#fff;' href='https://twitter.com/joschahen'>twitter.com/joschahen</a><br>";
             ret += indent + "<a style='color:#fff;' href='https://t.me/joschahenningsen'>t.me/joschahenningsen</a> <-- maybe even there<br><br>";
-            return ret
+            return ret;
         default:
             return "<span class='error'>✘</span> command not found: " + input;
     }
@@ -86,7 +86,7 @@ function getResponse(input) {
 function syntaxHighlight(json) {
     json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-        var cls = 'number';
+        let cls = 'number';
         if (/^"/.test(match)) {
             if (/:$/.test(match)) {
                 cls = 'key';
@@ -110,11 +110,11 @@ function Sleep(milliseconds) {
 var caesarShift = function (str, amount) {
     if (amount < 0)
         return caesarShift(str, amount + 26);
-    var output = '';
-    for (var i = 0; i < str.length; i++) {
-        var c = str[i];
+    let output = '';
+    for (let i = 0; i < str.length; i++) {
+        let c = str[i];
         if (c.match(/[a-z]/i)) {
-            var code = str.charCodeAt(i);
+            const code = str.charCodeAt(i);
             if ((code >= 65) && (code <= 90))
                 c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
             else if ((code >= 97) && (code <= 122))
