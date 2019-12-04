@@ -6,6 +6,17 @@ body{
     display: none;
 }
 
+.key { color: #8ed0f8; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.string { color: #c58b6f; }
+
+pre{
+    font-size: 1.2em;
+    margin: 0;
+}
+
 #terminal{
     position:fixed;
     top:0px;
