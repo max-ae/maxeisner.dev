@@ -1,5 +1,26 @@
 var myTerminal = new Terminal();
 var indent = "<span class='indent'></span>"
+var whoamiObj = {
+    "name": "Max Eisner",
+    "dateOfBirth": "11.04.2000",
+    "placeOfBirth": "Lahnstein, Germany",
+    "location": "Munich, Germany",
+    "education:": {
+        "bischöflichesCusanusGymnasium": {
+            "type": "High School",
+            "location": "Koblenz",
+            "from": "2009",
+            "to": "2018"
+        },
+        "TUM": {
+            "type": "Bachelor Studies, Informatics",
+            "location": "Munich",
+            "from": "2018",
+            "to": "2021 (expected)"
+        }
+    }
+}
+var whoamiStr = JSON.stringify(whoamiObj, undefined, 2)
 
 window.onload = function() {
     document.getElementById("terminal").append(myTerminal.html);
@@ -11,7 +32,7 @@ function setup(){
     myTerminal.print("Hi,");
     myTerminal.print("I'm glad you made it this far!");
     myTerminal.print("Feel free to explore");
-    myTerminal.print("(C) 🌈 Joscha Henningsen 2019");
+    myTerminal.print("(C) 2019 🌈 Max Eisner, based in Munich 🥨");
     myTerminal.print("\u2063");
 }
 
@@ -68,7 +89,6 @@ async function printlines(lines){
         myTerminal.print(list[i]);
     }
 }
-
 
 function Sleep(milliseconds) {
    return new Promise(resolve => setTimeout(resolve, milliseconds));

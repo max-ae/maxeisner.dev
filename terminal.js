@@ -1,12 +1,12 @@
 var Terminal = (function () {
 	// PROMPT_TYPE
 	var PROMPT_INPUT = 1, PROMPT_PASSWORD = 2, PROMPT_CONFIRM = 3
-	var inputPrompt = "<span class='error'>❤ </span> guest@joschas.page"
+	var inputPrompt = "<span class='error'>❤ </span> guest@maxeisner.dev"
 	var workingDir = "~"
     var inputPromptShape = ""
 	var inputPromptHTML = "<span id='inputPromptUser'>"+inputPrompt+"</span>"+"<span id='inputPromptShapeUser'>"+inputPromptShape+"</span>"
 	inputPromptHTML += "<span id='inputPromptLocation'>"+workingDir+"</span>"+"<span id='inputPromptShapeLocation'>"+inputPromptShape+"</span>"
-    
+
 	var fireCursorInterval = function (inputField, terminalObj) {
 		var cursor = terminalObj._cursor
 		setTimeout(function () {
@@ -62,7 +62,7 @@ var Terminal = (function () {
 				}, 1)
 			}
 		}
-		
+
 		inputField.onkeyup = function (e) {
 			if (PROMPT_TYPE === PROMPT_CONFIRM || e.which === 13) {
 				terminalObj._input.style.display = 'none'
@@ -106,7 +106,7 @@ var Terminal = (function () {
 			newLine.innerHTML = message
 			this._output.appendChild(newLine)
 		}
-		
+
 		this.printUser = function (message) {
 			var newLine = document.createElement('div')
 			newLine.innerHTML = inputPromptHTML+message
