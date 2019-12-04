@@ -6,4 +6,4 @@ deployment:
     - /bin/cp main.css $DEPLOYPATH
     - /bin/cp main.js $DEPLOYPATH
     - /bin/cp terminal.js $DEPLOYPATH
-    - /bin/cp icons $DEPLOYPATH/icons/
+    - /bin/cp -R icons $DEPLOYPATH/icons/
