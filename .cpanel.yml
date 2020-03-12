@@ -1,9 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/maxedvqe/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp main.css $DEPLOYPATH
-    - /bin/cp main.js $DEPLOYPATH
-    - /bin/cp terminal.js $DEPLOYPATH
-    - /bin/cp -R icons $DEPLOYPATH/icons/
