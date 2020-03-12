@@ -22,8 +22,6 @@ const whoamiObj = {
 };
 const whoamiStr = JSON.stringify(whoamiObj, undefined, 2);
 
-//TODO add about Joscha cool command + github / projects command
-
 window.onload = function () {
     document.getElementById("terminal").append(myTerminal.html);
     setup();
@@ -34,7 +32,7 @@ function setup() {
     myTerminal.print("Hi,");
     myTerminal.print("I'm glad you made it this far!");
     myTerminal.print("Feel free to explore");
-    myTerminal.print("(c) 2020 🌈 Max Eisner, based in Munich 🥨");
+    myTerminal.print("(c) 2020 🌈 Max Eisner, Student and Software Developer based in Munich 🥨");
     myTerminal.print("\u2063");
 }
 
@@ -46,7 +44,6 @@ function readMessage() {
 
 function messageReceived(message) {
     myTerminal.print(getResponse(message));
-    // printlines(getResponse(message));
     readMessage();
 }
 
@@ -57,7 +54,6 @@ function getResponse(input) {
             res += indent + "help<br>";
             res += indent + "whoami<br>";
             res += indent + "contact<br>";
-            //  res += indent+"projects<br>";
             res += indent + "clear<br>";
             res += indent + "exit<br>";
             return res;
