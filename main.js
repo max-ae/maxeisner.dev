@@ -34,7 +34,7 @@ function setup() {
     myTerminal.print("Hi,");
     myTerminal.print("I'm glad you made it this far!");
     myTerminal.print("Feel free to explore");
-    myTerminal.print("(C) 2019 🌈 Max Eisner, based in Munich 🥨");
+    myTerminal.print("(c) 2020 🌈 Max Eisner, based in Munich 🥨");
     myTerminal.print("\u2063");
 }
 
