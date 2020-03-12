@@ -24,6 +24,11 @@ const Terminal = (function () {
         const shouldDisplayInput = (PROMPT_TYPE === PROMPT_INPUT);
         const inputField = document.createElement('input');
 
+        inputField.setAttribute('autocomplete', 'off');
+        inputField.setAttribute('autocorrect', 'off');
+        inputField.setAttribute('autocapitalize', 'off');
+        inputField.setAttribute('spellcheck', 'false');
+
         inputField.style.position = 'absolute';
         inputField.style.zIndex = '-100';
         inputField.style.outline = 'none';
